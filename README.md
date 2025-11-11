@@ -1,6 +1,9 @@
 # X-GUI-BLOOKET-CLIENT
 
+# THE MOST ADVANCED, UNBANNABLE BLOOKET GUI, NOT PATCHED AND MAINTAINED!
+
 ## Setup And Usage Instructions ⚙️
+
 ## OPTION 1; USERSCRIPT
 1. Install a Userscript Manager
 2. Copy The Code From The USER.JS File and Import It Into Your Manager
@@ -9,6 +12,13 @@
 1. Right-Click The Page And Select "INSPECT"
 2. Paste The Code From The .JS File
 3. Voila!
+   
+## CREDITS 📜
+This GUI Was Created By 05Konz And Is Maintained And Updated By Xullys.
+
+## DISCLAIMER ❗
+I AM NOT RESPONSIBLE FOR ANY ACTION TAKEN AGAINST YOU / YOUR BLOOKET ACCOUNT.
+PLEASE USE RESPONIBLY!!!
 
 ## 🧰 Cheats List
 
