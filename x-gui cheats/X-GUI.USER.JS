@@ -5169,6 +5169,7 @@ changelogPage.appendChild(title);
 
 // Versions array (30 versions, highest to lowest)
 const versions = [
+  ["Version 6.30x", "ADDED CHEATS AND UPDATED GUI", "null"],
   ["Version 6.20x", "ADDED MORE CHEATS+++", "https://greasyfork.org/en/scripts/553301-x-gui-client-for-blooket/versions"],
   ["Version 6.10x", "ADDED WHAT YOU ARE READING RN", "https://greasyfork.org/en/scripts/553301-x-gui-client-for-blooket/versions"],
   ["Version 6.00x", "ADDED MOBILE MODE + A BUNCH MORE CRAP", "https://greasyfork.org/en/scripts/553301-x-gui-client-for-blooket/versions"],
@@ -5448,6 +5449,51 @@ setInterval(updatePing, 5000);
             settingInfo.append(settingName, settingDescription);
             settingElement.append(settingTop);
 
+           // === PANIC KEY LISTENER ===
+window.addEventListener("keydown", (e) => {
+    const panicKey = (Settings.data.panicKey || "K").toUpperCase();
+
+    if (e.key.toUpperCase() === panicKey) {
+        try {
+            // Turn off all cheats
+            for (const category in cheats) {
+                for (const cheat of cheats[category].cheats) {
+                    if (cheat.enabled) {
+                        cheat.enabled = false;
+                        try { cheat.run(); } catch {}
+                    }
+                }
+            }
+
+            // Remove GUI
+            if (typeof gui !== "undefined") gui.remove();
+
+            // Kill intervals & timeouts
+            for (let i = 1; i < 9999; i++) {
+                clearInterval(i);
+                clearTimeout(i);
+            }
+
+            // Remove hide keybind or others
+            window.removeEventListener("keydown", keydown);
+
+            // Hide particles if present
+            const c = document.querySelector("#particleCanvas");
+            if (c) c.remove();
+
+            // Just wipe logs
+            console.clear();
+
+        } catch (e2) {}
+
+        // Halt script execution
+        setTimeout(() => {
+            throw new Error("PANIC EXECUTED");
+        }, 5);
+    }
+});
+
+
             const settingInputs = document.createElement("div");
             settingInputs.className = classes.cheatInputs;
 
@@ -5514,6 +5560,23 @@ setInterval(updatePing, 5000);
         }
 
         settingsPage.onPath = () => settingRefresh.forEach((x) => x());
+
+addSetting(
+    "Panic Keybind",
+    "Instantly disables all cheats and closes GUI",
+    {
+        type: "keybind",
+        name: "Shortcut",
+        data: Settings.data.panicKey || "K",
+        value: () => parseKeybind(Settings.data.panicKey || "K"),
+        listen: (change) =>
+            createKeybindListener((keys) => change(parseKeybind(keys))),
+    },
+    (newKey) => {
+        Settings.setItem("panicKey", newKey);
+    }
+);
+
 
         addSetting(
             "Hide Keybind",
