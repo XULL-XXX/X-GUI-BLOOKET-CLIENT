@@ -3,7 +3,7 @@
 // ==UserScript==
 // @name         X-GUI CLIENT FOR BLOOKET
 // @namespace    http://tampermonkey.net/
-// @version      6.30x
+// @version      6.40x
 // @description  NOT PATCHED ANYMORE, THE BEST GUI ON THE WEB! ADVANCED ANTIBAN AND TONS OF FEATURES {CHEAT} {HACK} {CLIENT}
 // @author       You
 // @run-at       document-end
@@ -174,7 +174,7 @@
     const timeProcessed = 1747005941679;
     let latestProcess = -1;
     const cheat = (async () => {
-        const versionName = "6.30x";
+        const versionName = "6.40x";
         const gui = document.createElement("div");
         Object.assign(gui.style, {
             top: window.innerHeight / 2 - 250 + "px",
@@ -3181,6 +3181,284 @@ extras: {
                         },
                     },
                     {
+name: "Set Next Fish",
+            description: "Sets the next fish to catch",
+            inputs: [{
+                name: "Fish",
+                type: "options",
+                options: ["Old Boot", "Waffle", "Two of Spades", "Jellyfish", "Clownfish", "Goldfish", "Frog", "Blizzard Clownfish", "Turtle", "Cat", "Lovely Frog", "Lucky Frog", "Poison Dart Frog", "Seal", "Walrus", "Fairy", "Crab", "Lemon Crab", "Pufferfish", "Blobfish", "Rainbow Jellyfish", "Octopus", "Pirate Pufferfish", "Donut Blobfish", "Crimson Octopus", "Narwhal", "Baby Shark", "Megalodon", "Alien", "Rainbow Narwhal", "UFO", "Santa Claus", "Swamp Monster", "Red Astronaut", "Spooky Pumpkin", "Dragon", "Tim the Alien"]
+            }],
+            run: function(e) {
+                function t() {
+                    return Object.values(document.querySelector("#app > div > div"))[1].children[0]._owner
+                }
+                var a = {
+                        "Old Boot": {
+                            rarity: "Trash",
+                            minWeight: 1,
+                            maxWeight: 10,
+                            tiers: ["F", "D", "C"]
+                        },
+                        Waffle: {
+                            rarity: "Trash",
+                            minWeight: 1,
+                            maxWeight: 10,
+                            tiers: ["F", "D", "C"]
+                        },
+                        "Two of Spades": {
+                            rarity: "Trash",
+                            minWeight: 1,
+                            maxWeight: 10,
+                            tiers: ["F", "D", "C"]
+                        },
+                        Jellyfish: {
+                            rarity: "Easy One",
+                            minWeight: 10,
+                            maxWeight: 25,
+                            tiers: ["D", "C", "B"]
+                        },
+                        Clownfish: {
+                            rarity: "Easy One",
+                            minWeight: 20,
+                            maxWeight: 45,
+                            tiers: ["D", "C", "B"]
+                        },
+                        Goldfish: {
+                            rarity: "Easy One",
+                            minWeight: 30,
+                            maxWeight: 65,
+                            tiers: ["D", "C", "B"]
+                        },
+                        Frog: {
+                            rarity: "Easy One",
+                            minWeight: 50,
+                            maxWeight: 100,
+                            tiers: ["D", "C", "B"]
+                        },
+                        "Blizzard Clownfish": {
+                            rarity: "Great Catch",
+                            minWeight: 75,
+                            maxWeight: 125,
+                            tiers: ["D", "C", "B"]
+                        },
+                        Turtle: {
+                            rarity: "Great Catch",
+                            minWeight: 100,
+                            maxWeight: 150,
+                            tiers: ["D", "C", "B", "A"]
+                        },
+                        Cat: {
+                            rarity: "Great Catch",
+                            minWeight: 100,
+                            maxWeight: 200,
+                            tiers: ["D", "C", "B", "A"]
+                        },
+                        "Lovely Frog": {
+                            rarity: "Great Catch",
+                            minWeight: 150,
+                            maxWeight: 350,
+                            tiers: ["D", "C", "B", "A"]
+                        },
+                        "Lucky Frog": {
+                            rarity: "Great Catch",
+                            minWeight: 200,
+                            maxWeight: 400,
+                            tiers: ["D", "C", "B", "A"]
+                        },
+                        "Poison Dart Frog": {
+                            rarity: "Great Catch",
+                            minWeight: 250,
+                            maxWeight: 750,
+                            tiers: ["D", "C", "B", "A"]
+                        },
+                        Seal: {
+                            rarity: "Rare Find",
+                            minWeight: 500,
+                            maxWeight: 1e3,
+                            tiers: ["D", "C", "B", "A"]
+                        },
+                        Walrus: {
+                            rarity: "Rare Find",
+                            minWeight: 700,
+                            maxWeight: 2200,
+                            tiers: ["D", "C", "B", "A"]
+                        },
+                        Fairy: {
+                            rarity: "Rare Find",
+                            minWeight: 1500,
+                            maxWeight: 2500,
+                            tiers: ["D", "C", "B", "A"]
+                        },
+                        Crab: {
+                            rarity: "Rare Find",
+                            minWeight: 1e3,
+                            maxWeight: 3e3,
+                            tiers: ["D", "C", "B", "A"]
+                        },
+                        "Lemon Crab": {
+                            rarity: "Rare Find",
+                            minWeight: 2e3,
+                            maxWeight: 5e3,
+                            tiers: ["C", "B", "A"]
+                        },
+                        Pufferfish: {
+                            rarity: "Rare Find",
+                            minWeight: 2e3,
+                            maxWeight: 4e3,
+                            tiers: ["D", "C", "B", "A"]
+                        },
+                        Blobfish: {
+                            rarity: "Rare Find",
+                            minWeight: 3e3,
+                            maxWeight: 5e3,
+                            tiers: ["D", "C", "B", "A"]
+                        },
+                        "Rainbow Jellyfish": {
+                            rarity: "Epic Grab",
+                            minWeight: 7e3,
+                            maxWeight: 1e4,
+                            tiers: ["C", "B", "A"]
+                        },
+                        Octopus: {
+                            rarity: "Epic Grab",
+                            minWeight: 1e4,
+                            maxWeight: 15e3,
+                            tiers: ["C", "B", "A"]
+                        },
+                        "Pirate Pufferfish": {
+                            rarity: "Epic Grab",
+                            minWeight: 12e3,
+                            maxWeight: 2e4,
+                            tiers: ["C", "B", "A"]
+                        },
+                        "Donut Blobfish": {
+                            rarity: "Epic Grab",
+                            minWeight: 13e3,
+                            maxWeight: 25e3,
+                            tiers: ["C", "B", "A"]
+                        },
+                        "Crimson Octopus": {
+                            rarity: "Epic Grab",
+                            minWeight: 15e3,
+                            maxWeight: 3e4,
+                            tiers: ["B", "A"]
+                        },
+                        Narwhal: {
+                            rarity: "Catch of the Day",
+                            minWeight: 25e3,
+                            maxWeight: 5e4,
+                            tiers: ["B", "A", "S"]
+                        },
+                        "Baby Shark": {
+                            rarity: "Catch of the Day",
+                            minWeight: 5e4,
+                            maxWeight: 1e5,
+                            tiers: ["B", "A", "S"]
+                        },
+                        Megalodon: {
+                            rarity: "Catch of the Day",
+                            minWeight: 25e4,
+                            maxWeight: 5e5,
+                            tiers: ["B", "A", "S"]
+                        },
+                        Alien: {
+                            rarity: "Angler's Legend",
+                            minWeight: 5e5,
+                            maxWeight: 7e5,
+                            tiers: ["A", "S"]
+                        },
+                        "Rainbow Narwhal": {
+                            rarity: "Angler's Legend",
+                            minWeight: 75e4,
+                            maxWeight: 1e6,
+                            tiers: ["A", "S", "S+"]
+                        },
+                        UFO: {
+                            rarity: "Angler's Legend",
+                            minWeight: 1e6,
+                            maxWeight: 2e6,
+                            tiers: ["A", "S", "S+"]
+                        },
+                        "Santa Claus": {
+                            rarity: "Angler's Legend",
+                            minWeight: 1e6,
+                            maxWeight: 2e6,
+                            tiers: ["A", "S", "S+"]
+                        },
+                        "Swamp Monster": {
+                            rarity: "Angler's Legend",
+                            minWeight: 1e6,
+                            maxWeight: 2e6,
+                            tiers: ["A", "S", "S+"]
+                        },
+                        "Red Astronaut": {
+                            rarity: "Angler's Legend",
+                            minWeight: 1e6,
+                            maxWeight: 2e6,
+                            tiers: ["A", "S", "S+"]
+                        },
+                        "Spooky Pumpkin": {
+                            rarity: "Angler's Legend",
+                            minWeight: 1e6,
+                            maxWeight: 2e6,
+                            tiers: ["A", "S", "S+"]
+                        },
+                        Dragon: {
+                            rarity: "Angler's Legend",
+                            minWeight: 1e6,
+                            maxWeight: 2e6,
+                            tiers: ["A", "S", "S+"]
+                        },
+                        "Tim the Alien": {
+                            rarity: "Angler's Legend",
+                            minWeight: 15e5,
+                            maxWeight: 25e9,
+                            tiers: ["A", "S", "S+"]
+                        }
+                    },
+                    o = ["Crab", "Jellyfish", "Frog", "Pufferfish", "Octopus", "Narwhal", "Megalodon", "Blobfish", "Baby Shark"];
+                if (!window.functionSet) {
+                    var r = t().stateNode.answerNext;
+                    t().stateNode.answerNext = function() {
+                        if (t().stateNode.state.hackFish) {
+                            var i,
+                                n,
+                                s;
+                            t().stateNode.setState({
+                                    stage: "caught",
+                                    isCast: !1,
+                                    fish: {
+                                        name: i = e,
+                                        rarity: a[i].rarity,
+                                        weight: (n = a[i].minWeight, Math.floor(Math.random() * ((s = a[i].maxWeight) - n) + n)),
+                                        tier: a[i].tiers[Math.floor(Math.random() * a[i].tiers.length)],
+                                        isSpecial: o.includes(i) && 8 > Math.floor(100 * Math.random())
+                                    },
+                                    claimReady: !1
+                                }),
+                                setTimeout(function() {
+                                    t().stateNode.setState({
+                                        claimReady: !0
+                                    })
+                                }, 1600),
+                                t().stateNode.state.hackFish = null
+                        } else
+                            r.apply(this, arguments)
+                    }
+                }
+                window.functionSet = !0,
+                    ! function e(o) {
+                        if (Object.keys(a).includes(o))
+                            t().stateNode.state.hackFish = o;
+                        else {
+                            alert("That fish does not exist!");
+                            return
+                        }
+                    }
+                    (e)
+            }
+        }, {
+                     
                         name: "Set Lure",
                         description: "Sets fishing lure (range 1 - 5)",
                         inputs: [
@@ -5169,6 +5447,7 @@ changelogPage.appendChild(title);
 
 // Versions array (30 versions, highest to lowest)
 const versions = [
+  ["Version 6.40x", "UPDATED REFRESH SVG AND ADDED CHEAT", "null"],
   ["Version 6.30x", "ADDED CHEATS AND UPDATED GUI", "null"],
   ["Version 6.20x", "ADDED MORE CHEATS+++", "https://greasyfork.org/en/scripts/553301-x-gui-client-for-blooket/versions"],
   ["Version 6.10x", "ADDED WHAT YOU ARE READING RN", "https://greasyfork.org/en/scripts/553301-x-gui-client-for-blooket/versions"],
@@ -5285,7 +5564,7 @@ guiContent.appendChild(changelogPage);
         creditLinks.className = classes.creditLinks;
 
         creditLinks.append(createCredit("Our Github", '<a target="_blank" href="https://github.com/XULL-XXX/X-GUI-BLOOKET-CLIENT">X-GUI CHEATS/GITHUB</a>'));
-        creditLinks.append(createCredit("Our Website *BETA*", '<a target="_blank" href="https://XULL-XXX.github.io">More Info/Website</a>'));
+        creditLinks.append(createCredit("Our Website *RELEASED*", '<a target="_blank" href="https://xgui-client.github.io">More Info/Website</a>'));
         creditLinks.append(createCredit("Greasyfork", '<a target="_blank" href="https://greasyfork.org/en/scripts/553301-x-gui-client-for-blooket">Greasyfork page (Give Me Feedback!)</a>'));
 
         function parseTime(d) {
@@ -5449,50 +5728,7 @@ setInterval(updatePing, 5000);
             settingInfo.append(settingName, settingDescription);
             settingElement.append(settingTop);
 
-           // === PANIC KEY LISTENER ===
-window.addEventListener("keydown", (e) => {
-    const panicKey = (Settings.data.panicKey || "K").toUpperCase();
-
-    if (e.key.toUpperCase() === panicKey) {
-        try {
-            // Turn off all cheats
-            for (const category in cheats) {
-                for (const cheat of cheats[category].cheats) {
-                    if (cheat.enabled) {
-                        cheat.enabled = false;
-                        try { cheat.run(); } catch {}
-                    }
-                }
-            }
-
-            // Remove GUI
-            if (typeof gui !== "undefined") gui.remove();
-
-            // Kill intervals & timeouts
-            for (let i = 1; i < 9999; i++) {
-                clearInterval(i);
-                clearTimeout(i);
-            }
-
-            // Remove hide keybind or others
-            window.removeEventListener("keydown", keydown);
-
-            // Hide particles if present
-            const c = document.querySelector("#particleCanvas");
-            if (c) c.remove();
-
-            // Just wipe logs
-            console.clear();
-
-        } catch (e2) {}
-
-        // Halt script execution
-        setTimeout(() => {
-            throw new Error("PANIC EXECUTED");
-        }, 5);
-    }
-});
-
+           
 
             const settingInputs = document.createElement("div");
             settingInputs.className = classes.cheatInputs;
@@ -5560,22 +5796,6 @@ window.addEventListener("keydown", (e) => {
         }
 
         settingsPage.onPath = () => settingRefresh.forEach((x) => x());
-
-addSetting(
-    "Panic Keybind",
-    "Instantly disables all cheats and closes GUI",
-    {
-        type: "keybind",
-        name: "Shortcut",
-        data: Settings.data.panicKey || "K",
-        value: () => parseKeybind(Settings.data.panicKey || "K"),
-        listen: (change) =>
-            createKeybindListener((keys) => change(parseKeybind(keys))),
-    },
-    (newKey) => {
-        Settings.setItem("panicKey", newKey);
-    }
-);
 
 
         addSetting(
@@ -5974,12 +6194,20 @@ createSidebarPath("Info/Credits", "code", creditsPage);
         sidebar.prepend(bigTextContainer);
 
         const refreshControl = document.createElement("div");
-        refreshControl.innerHTML = `<i class="fas fa-sync" style="line-height: 1"></i>`;
-        refreshControl.className = classes.refreshControl;
-        refreshControl.onclick = () => {
-            refreshControl.animate([{ rotate: "0deg" }, { rotate: "360deg" }], { duration: 1000, easing: "ease" });
-            path.updatePath();
-        };
+refreshControl.className = classes.refreshControl;
+refreshControl.innerHTML = `
+<svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"
+     xmlns="http://www.w3.org/2000/svg" style="display:block;">
+  <path d="M4,12a1,1,0,0,1-2,0A9.983,9.983,0,0,1,18.242,4.206V2.758a1,1,0,1,1,2,0v4a1,1,0,0,1-1,1h-4a1,1,0,0,1,0-2h1.743A7.986,7.986,0,0,0,4,12Zm17-1a1,1,0,0,0-1,1A7.986,7.986,0,0,1,7.015,18.242H8.757a1,1,0,1,0,0-2h-4a1,1,0,0,0-1,1v4a1,1,0,0,0,2,0V19.794A9.984,9.984,0,0,0,22,12,1,1,0,0,0,21,11Z"/>
+</svg>
+`;
+refreshControl.onclick = () => {
+    refreshControl.animate(
+        [{ transform: "rotate(0deg)" }, { transform: "rotate(360deg)" }],
+        { duration: 600, easing: "ease" }
+    );
+    path.updatePath();
+};
 
         gui.append(controls, guiTopBar, sidebar, guiContent, pathText, refreshControl);
         path.updatePath();
