@@ -1,5 +1,4 @@
 
-
     /**
  * @license AGPL-3.0
  * Blooket Cheats
@@ -18,8 +17,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
  * Source: https://github.com/Blooket-Council/Blooket-Cheats * EMAIL: 05konz994@gmail.com
- * Source: https://greasyfork.org/en/scripts/553301/ * EMAIL: slinkingfox@outlook.com
- * Source: https://github.com/xgui-client/x-gui-blooket-client * EMAIL: slinkingfox@outlook.com
+ * Source: https://greasyfork.org/en/scripts/553301/versions/new * EMAIL slinkingfox@outlook.com
 
 */
 
@@ -1620,6 +1618,19 @@ run: function() {
                 const gameCode = getGameCode();
                 const url = gameCode ? "https://blooketbot.schoolcheats.net/" + gameCode : "https://blooketbot.schoolcheats.net/";
                 window.open(url, "_blank", "width=500,height=500,resizable=yes,scrollbars=yes,status=yes");
+            }
+        }, {
+               name: "Crash Game",
+            description: "Crashes the host's game",
+            run: function() {
+                var e = Object.values(function e(t = document.querySelector("#app")) {
+                        return Object.values(t)[1]?.children?.[0]?._owner.stateNode ? t : e(t.querySelector(":scope>div"))
+                    }
+                    ())[1].children[0]._owner.stateNode;
+                e.props.liveGameController.setVal({
+                    path: `c/${e.props.client.name}/b/toString`,
+                    val: "Crashed"
+                })
             }
         }, {
 
