@@ -1,5 +1,5 @@
 # 🚀 X-GUI Blooket Client
-# DOWNLOAD CSP UNBLOCK [**HERE**](https://chromewebstore.google.com/detail/csp-unblock/lkbelpgpclajeekijigjffllhigbhobd?hl=en) FOR A BETTER EXPERIENCE
+# NEW ACCOUNT GENERATOR USERSCRIPT!
 # NEW ALT MANAGER FEATURE ADDED!
 
 [![Website](https://img.shields.io/badge/Website-X--GUI-1f6feb?style=for-the-badge&logo=google-chrome&logoColor=white)](https://xgui-client.github.io)
