@@ -50,7 +50,7 @@
 ## 📜 Credits
 - **GUI Created By:** 05Konz 
 - **Maintained & Updated By:** Xullys
-- **Huge Credit To*** CryptoDude3 **and** Duck Club Blooket Hacks!
+- **Huge Credit To** CryptoDude3 **and** Duck Club Blooket Hacks!
 
 - **JOIN THEIR DISCORD** [HERE](https://discord.com/channels/1238253338995195995/1379132344606396508)
 
